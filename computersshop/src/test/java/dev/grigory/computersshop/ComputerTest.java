@@ -20,5 +20,13 @@ class ComputerStoreTest {
         assertTrue(store.removeComputerByBrand("HP"));
         assertNull(store.searchComputerByBrand("HP"));
     }
-
+    @Test
+    void testListComputers() {
+        Computer comp1 = new Computer("Apple", 16, "M1", "macOS", 2000.0);
+        Computer comp2 = new Computer("Dell", 32, "Intel i9", "Windows 11", 2500.0);
+        store.addComputer(comp1);
+        store.addComputer(comp2);
+        List<Computer> computers = store.getAllComputers();
+        assertEquals(2, computers.size());
+    }
 }
