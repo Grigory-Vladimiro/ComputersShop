@@ -13,4 +13,12 @@ class ComputerStoreTest {
         store.addComputer(comp);
         assertNotNull(store.searchComputerByBrand("Lenovo"));
     }
+    @Test
+    void testDeleteComputer() {
+        Computer comp = new Computer("HP", 8, "AMD Ryzen 5", "Windows 11", 900.0);
+        store.addComputer(comp);
+        assertTrue(store.removeComputerByBrand("HP"));
+        assertNull(store.searchComputerByBrand("HP"));
+    }
+
 }
