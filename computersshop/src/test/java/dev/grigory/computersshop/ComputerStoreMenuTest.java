@@ -18,6 +18,10 @@ class ComputerStoreMenuTest {
             Windows 10
             1200.0
             2
+            3
+            Lenovo
+            4
+            Lenovo
             5
             """;
         InputStream stdin = System.in;
@@ -47,7 +51,7 @@ class ComputerStoreMenuTest {
                 try {
                     ComputerStoreMenu.main(new String[]{});
                 } catch (Exception e) {
-                    fail("main() вызвал исключение: " + e.getMessage());
+                    fail("main() exception called: " + e.getMessage());
                 }
             });
             thread.start();
