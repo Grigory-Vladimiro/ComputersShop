@@ -3,9 +3,15 @@ package dev.grigory.computersshop;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+
 
 class ComputerStoreTest {
-    private final ComputerStore store = new ComputerStore("CyberDepot", "Grigory", "987654321");
+    private ComputerStoreList store; 
+     @BeforeEach
+    void setUp() { 
+        store = new ComputerStoreList("CyberDepot", "Grigory", "987654321");
+    }
 
     @Test
     void testAddAndFindComputer() {
