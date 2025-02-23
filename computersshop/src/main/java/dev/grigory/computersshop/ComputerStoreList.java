@@ -3,10 +3,13 @@ package dev.grigory.computersshop;
 import java.util.ArrayList;
 import java.util.List;
 public class ComputerStoreList {
-    private String storeName;
-    private String owner;
-    private String taxId;
-    private List<Computer> inventory;
+    @SuppressWarnings("unused")
+    private final String storeName;
+    @SuppressWarnings("unused")
+    private final String owner;
+    @SuppressWarnings("unused")
+    private final String taxId;
+    private final List<Computer> inventory;
 
     public ComputerStoreList(String storeName, String owner, String taxId) {
         this.storeName = storeName;
