@@ -1,0 +1,55 @@
+@startuml ComputersShop
+!define DoubleSpace ""
+
+class Computer {
+    - brand: String
+    - memory: int
+    - processor: String
+    - os: String
+    - price: double
+    --
+    + getBrand(): String
+    + toString(): String
+}
+
+class ComputerStoreList {
+    - storeName: String
+    - owner: String
+    - taxId: String
+    - inventory: List<Computer>
+    --
+    + addComputer(Computer): void
+    + removeComputerByBrand(String): boolean
+    + searchComputerByBrand(String): Computer
+    + getAllComputers(): List<Computer>
+    + printStoreInfo(): void
+}
+
+class ComputerStoreMenu {
+    - scanner: Scanner
+    - store: ComputerStoreList
+    --
+    + main(String[]): void
+}
+
+class ComputerStoreListTest {
+    + testAddAndFindComputer(): void
+    + testDeleteComputer(): void
+    + testListComputers(): void
+}
+
+class ComputerStoreMenuTest {
+    + testMainRunsWithoutExceptions(): void
+    + testUserInputSimulation(): void
+    + testFullUserInputFlow(): void
+}
+
+
+ComputerStoreList "1" *-- "0..*" Computer : "contains"
+ComputerStoreMenu ..> ComputerStoreList : "uses"
+
+
+ComputerStoreListTest ..|> ComputerStoreList : "tests"
+ComputerStoreMenuTest ..|> ComputerStoreMenu : "tests"
+
+@enduml
